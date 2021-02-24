@@ -4,7 +4,7 @@ module.exports = (req, res, next) => {
     const token = req.headers.authorization;
 
     if (!token) {
-        res.status(401).json("Unautorized access");
+        res.status(401).json("You shall not pass!");
     } else {
         jwt.verify(token, process.env.SECRET, (err, decoded) => {
             if (err) {
